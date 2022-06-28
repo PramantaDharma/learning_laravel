@@ -13,6 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
 Route::get('/', function () {
-    return 'hello world!';
+    return view('home', [
+        "title" => "Home",
+    ]);
+});
+
+Route::get('/product', function () {
+    return view('posts', [
+        "title" => "Product",
+    ]);
+});
+
+Route::get('/contact', function () {
+    return view('contact', [
+        "title" => "Contact",
+        "name" => "Pramanta",
+        "image" => "trade.jpg"
+    ]);
 });
